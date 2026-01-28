@@ -25,6 +25,42 @@
         <edmx:Include Namespace="ZC_DM_MTR_PRESAMPLING_CON_CDS" Alias="SAP"/>
     </edmx:Reference>
     <edmx:DataServices>
-        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+        <Schema Namespace="zc_dm_mtr_presampling_con_cd_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZC_DM_MTR_PRESAMPLING_CONType">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Device Category"/>
+                            <PropertyValue Property="Value" Path="matnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Manufacturer year"/>
+                            <PropertyValue Property="Value" Path="baujj"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Storage Location"/>
+                            <PropertyValue Property="Value" Path="b_lager"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Seal Expiry"/>
+                            <PropertyValue Property="Value" Path="seal_Expiry"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="LH Meter"/>
+                            <PropertyValue Property="Value" Path="LH_meter"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>matnr</PropertyPath>
+                        <PropertyPath>baujj</PropertyPath>
+                        <PropertyPath>b_lager</PropertyPath>
+                        <PropertyPath>seal_Expiry</PropertyPath>
+                        <PropertyPath>LH_meter</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

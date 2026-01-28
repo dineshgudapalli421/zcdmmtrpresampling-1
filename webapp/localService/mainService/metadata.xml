@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZC_DM_MTR_PRESAMPLING_CON_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZC_DM_MTR_PRESAMPLING_CONType" sap:label="Meter Presampling Composite View" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="matnr"/>
+                    <PropertyRef Name="equnr"/>
+                </Key>
+                <Property Name="matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Device Category" sap:quickinfo="Material Number" sap:value-list="standard"/>
+                <Property Name="equnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:display-format="UpperCase" sap:label="Equipment" sap:quickinfo="Equipment Number"/>
+                <Property Name="devloc" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Device Location"/>
+                <Property Name="serge" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Manufacturer Serial" sap:quickinfo="Manufacturer's Serial Number"/>
+                <Property Name="baujj" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Manufacturer year" sap:quickinfo="Year of construction" sap:value-list="standard"/>
+                <Property Name="bauform" Type="Edm.String" MaxLength="30" sap:label="Device Category Description" sap:quickinfo="Device category description"/>
+                <Property Name="b_lager" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Storage Location" sap:value-list="standard"/>
+                <Property Name="txt30" Type="Edm.String" MaxLength="50" sap:label="Device Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="los" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Sample Lot" sap:quickinfo="Sample lot"/>
+                <Property Name="vlzeitt" Type="Edm.Decimal" Precision="2" Scale="0" sap:label="Seal Duration" sap:quickinfo="Calibration validity (yrs) for ext. devs subject to certif."/>
+                <Property Name="plombe" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Seal Code" sap:quickinfo="Seal code"/>
+                <Property Name="plombdat" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Sealing Year"/>
+                <Property Name="bgljahr" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Cerification year" sap:quickinfo="Certification Year"/>
+                <Property Name="vlzeit_dev" Type="Edm.Decimal" Precision="2" Scale="0" sap:label="Calibration validity" sap:quickinfo="Individual cal. validity (years) of dev. subject to certif."/>
+                <Property Name="seal_Expiry" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Seal Expiry" sap:value-list="standard"/>
+                <Property Name="bauklas" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Device form" sap:quickinfo="Construction class"/>
+                <Property Name="Next_seal_Expiry" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Next.seal Expiry"/>
+                <Property Name="LH_meter" Type="Edm.String" MaxLength="3" sap:required-in-filter="false" sap:label="LH Meter" sap:value-list="standard"/>
+                <Property Name="metfirm" Type="Edm.String" MaxLength="70" sap:label="Metrology Firmware V" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dev_Com" Type="Edm.String" MaxLength="70" sap:label="Device Communication" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Time_on_Test" Type="Edm.String" MaxLength="20" sap:label="Time on Test" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZI_DM_METER_PRESAMPLING_INT3Type" sap:label="Interface view for Meter Presampling" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="matnr"/>
+                </Key>
+                <Property Name="matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/>
+            </EntityType>
+            <EntityType Name="ZI_DM_METER_PRESAMPLING_INT4Type" sap:label="Value help for Manufacturer year" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="baujj"/>
+                </Key>
+                <Property Name="baujj" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Construction year" sap:quickinfo="Year of construction"/>
+            </EntityType>
+            <EntityType Name="ZI_DM_METER_PRESAMPLING_INT5Type" sap:label="Value help for storage location" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="lgort"/>
+                </Key>
+                <Property Name="lgort" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Storage Location"/>
+            </EntityType>
+            <EntityType Name="ZI_DM_METER_PRESAMPLING_INT6Type" sap:label="Value help for seal expiry" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="seal_Expiry"/>
+                </Key>
+                <Property Name="seal_Expiry" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="0"/>
+            </EntityType>
+            <EntityType Name="ZI_DM_METER_PRESAMPLING_INT7Type" sap:label="Value help for LH meter" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LH_meter"/>
+                </Key>
+                <Property Name="LH_meter" Type="Edm.String" Nullable="false" MaxLength="3"/>
+            </EntityType>
+            <EntityContainer Name="ZC_DM_MTR_PRESAMPLING_CON_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZC_DM_MTR_PRESAMPLING_CON" EntityType="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZC_DM_MTR_PRESAMPLING_CONType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_DM_METER_PRESAMPLING_INT3" EntityType="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZI_DM_METER_PRESAMPLING_INT3Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_DM_METER_PRESAMPLING_INT4" EntityType="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZI_DM_METER_PRESAMPLING_INT4Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_DM_METER_PRESAMPLING_INT5" EntityType="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZI_DM_METER_PRESAMPLING_INT5Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_DM_METER_PRESAMPLING_INT6" EntityType="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZI_DM_METER_PRESAMPLING_INT6Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_DM_METER_PRESAMPLING_INT7" EntityType="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZI_DM_METER_PRESAMPLING_INT7Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZC_DM_MTR_PRESAMPLING_CONType/matnr" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Interface view for Meter Presampling"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_DM_METER_PRESAMPLING_INT3"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="matnr"/>
+                                    <PropertyValue Property="ValueListProperty" String="matnr"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZC_DM_MTR_PRESAMPLING_CONType/baujj" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value help for Manufacturer year"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_DM_METER_PRESAMPLING_INT4"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="baujj"/>
+                                    <PropertyValue Property="ValueListProperty" String="baujj"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZC_DM_MTR_PRESAMPLING_CONType/b_lager" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value help for storage location"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_DM_METER_PRESAMPLING_INT5"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="b_lager"/>
+                                    <PropertyValue Property="ValueListProperty" String="lgort"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZC_DM_MTR_PRESAMPLING_CONType/seal_Expiry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value help for seal expiry"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_DM_METER_PRESAMPLING_INT6"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="seal_Expiry"/>
+                                    <PropertyValue Property="ValueListProperty" String="seal_Expiry"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZC_DM_MTR_PRESAMPLING_CONType/LH_meter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value help for LH meter"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_DM_METER_PRESAMPLING_INT7"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="LH_meter"/>
+                                    <PropertyValue Property="ValueListProperty" String="LH_meter"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZC_DM_MTR_PRESAMPLING_CON_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="ZC_DM_MTR_PRESAMPLING_CON_CDS.ZC_DM_MTR_PRESAMPLING_CON_CDS_Entities/ZC_DM_MTR_PRESAMPLING_CON" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>txt30</PropertyPath>
+                                <PropertyPath>metfirm</PropertyPath>
+                                <PropertyPath>Dev_Com</PropertyPath>
+                                <PropertyPath>Time_on_Test</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>txt30</PropertyPath>
+                                <PropertyPath>metfirm</PropertyPath>
+                                <PropertyPath>Dev_Com</PropertyPath>
+                                <PropertyPath>Time_on_Test</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://sapsdvapp.aws.londonhydro.cloud:8000/sap/opu/odata/sap/ZC_DM_MTR_PRESAMPLING_CON_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://sapsdvapp.aws.londonhydro.cloud:8000/sap/opu/odata/sap/ZC_DM_MTR_PRESAMPLING_CON_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

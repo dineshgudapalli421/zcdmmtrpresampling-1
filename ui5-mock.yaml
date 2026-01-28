@@ -31,11 +31,13 @@ server:
         mountPath: /
         services:
           - urlPath: /sap/opu/odata/sap/ZC_DM_MTR_PRESAMPLING_CON_CDS
-            metadataPath: ./webapp/localService/metadata.xml
-            mockdataPath: ./webapp/localService/data
+            metadataPath: ./webapp/localService/mainService/metadata.xml
+            mockdataPath: ./webapp/localService/mainService/data
+            generateMockData: true
+          - urlPath: /sap/opu/odata/sap/ZDM_LOT_DEVICE_SRV
+            metadataPath: ./webapp/localService/lotService/metadata.xml
+            mockdataPath: ./webapp/localService/lotService/data
             generateMockData: true
         annotations:
-          - localPath: ./webapp/localService/ZC_DM_MTR_PRESAMPLING_CON_CD_VAN.xml
+          - localPath: ./webapp/localService/mainService/ZC_DM_MTR_PRESAMPLING_CON_CD_VAN.xml
             urlPath: /sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZC_DM_MTR_PRESAMPLING_CON_CD_VAN',Version='0001')/$value/
-          - localPath: ./webapp/annotations/annotation.xml
-            urlPath: annotations/annotation.xml

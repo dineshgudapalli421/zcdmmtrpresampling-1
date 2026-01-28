@@ -81,7 +81,7 @@
                     </Collection>
                 </Annotation>
             </Annotations>
-            <Annotations Target="SAP.ZC_DM_MTR_PRESAMPLING_CONType/matnr">
+            <!-- <Annotations Target="SAP.ZC_DM_MTR_PRESAMPLING_CONType/matnr">
                 <Annotation Term="Common.ValueList">
                     <Record Type="Common.ValueListType">
                         <PropertyValue Property="Parameters">
@@ -96,7 +96,7 @@
                         <PropertyValue Property="SearchSupported" Bool="true"/>
                     </Record>
                 </Annotation>
-            </Annotations>
+            </Annotations> -->
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>
